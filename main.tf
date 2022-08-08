@@ -98,3 +98,6 @@ resource "aws_security_group" "web_allow_http_ssh" {
     Name = "allow_web_ssh"
   }
 }
+output "subnet_id" {
+  value = aws_subnet.web_subnet.id
+}

@@ -1,7 +1,7 @@
 # 1. Create vpc
 
 resource "aws_vpc" "web_vpc" {
-  cidr_block =  var.var_vpc_cidr #"10.0.0.0/16" fetching from terraform cloud
+  cidr_block =  var.vpc_cidr #"10.0.0.0/16" fetching from terraform cloud
   
   tags = {
     Name = "web_vpc"
@@ -20,8 +20,8 @@ resource "aws_internet_gateway" "web_gw" {
 # 4. create a subnet
 resource "aws_subnet" "web_subnet" {
   vpc_id     = aws_vpc.web_vpc.id
-  cidr_block = var.var_subnet_cidr #"10.0.1.0/24"
-  availability_zone = var.var_available_zone #"us-west-2a"
+  cidr_block = var.subnet_cidr #"10.0.1.0/24"
+  availability_zone = var.available_zone #"us-west-2a"
 
   tags = {
     Name = "web_subnet"

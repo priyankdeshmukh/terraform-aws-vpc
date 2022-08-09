@@ -21,7 +21,7 @@ resource "aws_internet_gateway" "web_gw" {
 resource "aws_subnet" "web_subnet" {
   vpc_id     = aws_vpc.web_vpc.id
   cidr_block = var.subnet_cidr #"10.0.1.0/24"
-  availability_zone = var.available_zone #"us-west-2a"
+  availability_zone = var.availability_zone #"us-west-2a"
 
   tags = {
     Name = "web_subnet"
@@ -100,7 +100,7 @@ resource "aws_security_group" "web_allow_http_ssh" {
 }
 
 output "vpc_id" {
-  value = aws_vpc.web_web.id
+  value = aws_vpc.web_vpc.id
 }
 
 output "subnet_id" {

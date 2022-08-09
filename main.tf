@@ -25,3 +25,6 @@ output "vpc_id" {
 output "subnet_id" {
   value = aws_subnet.test_subnet.id
 }
+output "subnet_id" {
+  value = aws_subnet.web_subnet.id
+}

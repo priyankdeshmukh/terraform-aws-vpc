@@ -98,3 +98,12 @@ resource "aws_security_group" "web_allow_http_ssh" {
     Name = "allow_web_ssh"
   }
 }
+
+output "vpc_id" {
+  value = aws_vpc.web_web.id
+}
+
+output "subnet_id" {
+  value = aws_subnet.web_subnet.id
+}
+

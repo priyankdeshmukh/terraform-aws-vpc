@@ -1,11 +1,14 @@
-variable "var_vpc_cidr" {
-  type        = string
+variable "vpc_cidr" {}
+
+variable "tenancy" {
+  type = string
 }
 
-variable "var_subnet_cidr" {
-  type        = string
-}
+variable "vpc_id" {}
 
-variable "var_available_zone"{
-    type = string
-}
+variable "subnet_cidr" {}
+
+variable "subnet_id" {}
+
+variable "availability_zone" {}
+
